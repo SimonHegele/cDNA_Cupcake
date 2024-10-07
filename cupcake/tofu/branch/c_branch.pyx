@@ -13,7 +13,7 @@ def exon_finding(np.ndarray[DTYPE_t, ndim=1] baseC, np.ndarray[DTYPE_t, ndim=1] 
     exon_tree = IntervalTreeUnique()
     for i in xrange(size):
         if (baseC[i] > threshBase and not tag):  # a new exon!
-            #print "new exon found at position", i
+            print("new exon found at position", i)
             e_start = i
             tag = True
         if tag:
@@ -27,7 +27,7 @@ def exon_finding(np.ndarray[DTYPE_t, ndim=1] baseC, np.ndarray[DTYPE_t, ndim=1] 
                 tag = False
             elif baseC[i] > 0 and (altC_pos[i] > threshSplit or altC_neg[i+1] < -threshSplit): # alt. junction found!
                 # end the current exon at i and start a new one at i + 1
-                print "alt. junction found at", i
+                print("alt. junction found at", i)
                 exon_tree.insert_interval(Interval(e_start+offset, i+1+offset, index))
                 index += 1
                 e_start = i + 1
@@ -67,7 +67,7 @@ def exon_matching(exon_tree, ref_exon, match_extend_tolerate_left, match_extend_
         # check if the ends differ a little, if so, extend to min/max
         for i in xrange(len(matches)):
             d_start = abs(matches[i].start - ref_exon.start)
-            #print "matching {0} to {1}".format(matches[i].start, ref_exon.start)
+            print("matching {0} to {1}".format(matches[i].start, ref_exon.start))
             #pdb.set_trace()
             if d_start <= match_extend_tolerate_left: # now find the furthest end that satisfies the results
                 for j in xrange(len(matches)-1, i-1, -1):

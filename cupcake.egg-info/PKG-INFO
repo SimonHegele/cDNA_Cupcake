@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: cupcake
+Version: 29.0.0
+Author: Elizabeth Tseng
+Author-email: etseng@pacb.com
+License-File: LICENSE.md
+Requires-Dist: biopython
+Requires-Dist: bx-python>=0.7.3
+Requires-Dist: numpy
+Requires-Dist: bcbio-gff
+Requires-Dist: scikit-learn
+Requires-Dist: pysam
