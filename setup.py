@@ -25,7 +25,7 @@ setup(
     zip_safe=False,
     packages = ['cupcake', 'cupcake.io', 'cupcake.ice',
                 'cupcake.tofu', 'cupcake.tofu.branch', 'cupcake.tofu.counting',
-                'phasing', 'phasing.io', 'sequence'],
+                'phasing', 'phasing.io', 'cupcake.sequence'],
     setup_requires=[
         'numpy',
         'cython'
