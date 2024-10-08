@@ -3,7 +3,6 @@ import sys
 import numpy as np
 from Cython.Build import cythonize
 
-
 __author__ = "etseng@pacb.com"
 version = "29.0.0"
 
@@ -16,7 +15,6 @@ ext_modules = [
                     ["cupcake/ice/find_ECE.pyx"]),
               ]
 
-
 setup(
     name = 'cupcake',
     version=version,
@@ -27,7 +25,7 @@ setup(
     zip_safe=False,
     packages = ['cupcake', 'cupcake.io', 'cupcake.ice',
                 'cupcake.tofu', 'cupcake.tofu.branch', 'cupcake.tofu.counting',
-                'phasing', 'phasing.io'],
+                'phasing', 'phasing.io', 'sequence'],
     setup_requires=[
         'numpy',
         'cython'
